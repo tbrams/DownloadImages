@@ -1,16 +1,17 @@
 package com.hanselandpetal.catalog;
 
-import java.util.List;
-
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.hanselandpetal.catalog.model.Flower;
+
+import java.util.List;
 
 public class FlowerAdapter extends ArrayAdapter<Flower> {
 
@@ -36,7 +37,9 @@ public class FlowerAdapter extends ArrayAdapter<Flower> {
 		tv.setText(flower.getName());
 		
 		//Display flower photo in ImageView widget
-		
+        ImageView image = (ImageView) view.findViewById(R.id.imageView1);
+        image.setImageBitmap(flower.getBitmap());
+
 		return view;
 	}
 
